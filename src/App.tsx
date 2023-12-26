@@ -1,9 +1,11 @@
+import { AppProvider } from "./providers/App.provider";
+
 const App = () => {
-  return (
-    <div>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
-    </div>
-  );
+    return (
+        <main className="min-h-screen flex items-center flex-col bg-gray-100">
+            <AppProvider />
+        </main>
+    );
 };
 
 export default App;
