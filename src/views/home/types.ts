@@ -4,5 +4,10 @@ export type User = {
     email: string;
     createdAt: string;
     updatedAt: string;
-    refreshToken: string;
+    address: {
+        street: string;
+        city: string;
+        country: string;
+        zipCode: string;
+    };
 };

@@ -1,23 +1,21 @@
 import { Title } from "@mantine/core";
 import { useUser } from "./customHooks";
-import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
-import { handleUserNotFound } from "./functions";
+import { Loader } from "../../components";
 
 const HomeView = () => {
-    const { user, error } = useUser();
-    const navigate = useNavigate();
+    const { user, isLoading } = useUser();
 
-    useEffect(() => {
-        if (error?.response?.status === 404) {
-            handleUserNotFound(navigate);
-        }
-    }, [error]);
+    if (isLoading) {
+        return <Loader />;
+    }
 
     return (
         <div>
             <Title order={1}>
-                Welcome, <span className="text-[#50d71e]">{user?.name}</span>!
+                <span>
+                    Welcome,{" "}
+                    <span className="text-[#50d71e]">{user?.name}</span>!
+                </span>
             </Title>
         </div>
     );

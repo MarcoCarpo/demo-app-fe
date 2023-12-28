@@ -7,6 +7,7 @@ import { LoginDto, RegisterDto } from "./types";
 import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "../../contexts/customHooks";
 import { onLoginSuccess, onRegisterSuccess } from "./functions";
+import { useEffect } from "react";
 
 export const useLoginForm = (isRegister: boolean) => {
     const passwordSchema = z
@@ -59,6 +60,10 @@ export const useLoginForm = (isRegister: boolean) => {
         initialValues,
         validate: zodResolver(schema),
     });
+
+    useEffect(() => {
+        form.reset();
+    }, []);
 
     return form;
 };

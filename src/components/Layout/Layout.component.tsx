@@ -1,4 +1,4 @@
-import { AppShell, Burger, Button, Container, Flex } from "@mantine/core";
+import { AppShell, Burger, Button, Group, Skeleton } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { Outlet } from "react-router-dom";
 import { useLogout } from "./customHooks";
@@ -19,18 +19,34 @@ const Layout = () => {
                 padding="md"
             >
                 <AppShell.Header>
-                    <Container h={"100%"} fluid>
-                        <Flex align="center" h="100%">
-                            <Button ml={"auto"} onClick={() => logout()}>
-                                Logout
-                            </Button>
-                        </Flex>
-                    </Container>
+                    <Group h="100%" px="md">
+                        <Burger
+                            opened={opened}
+                            onClick={toggle}
+                            hiddenFrom="sm"
+                            size="sm"
+                        />
+                        <Button ml={"auto"} onClick={() => logout()}>
+                            Logout
+                        </Button>
+                    </Group>
                 </AppShell.Header>
 
-                <AppShell.Navbar p="md">Navbar</AppShell.Navbar>
+                <AppShell.Navbar p="md">
+                    Navbar
+                    {Array(15)
+                        .fill(0)
+                        .map((_, index) => (
+                            <Skeleton
+                                key={index}
+                                h={28}
+                                mt="sm"
+                                animate={false}
+                            />
+                        ))}
+                </AppShell.Navbar>
 
-                <AppShell.Main>
+                <AppShell.Main className="flex">
                     <Outlet />
                 </AppShell.Main>
             </AppShell>

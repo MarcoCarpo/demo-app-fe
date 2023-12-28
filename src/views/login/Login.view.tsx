@@ -15,6 +15,7 @@ import { useNavigate } from "react-router-dom";
 
 const LoginView = ({ isRegister = false }) => {
     const form = useLoginForm(isRegister);
+
     const { handleLogin, handleRegister } = useHandleLogin();
     const navigate = useNavigate();
     const { isAuthenticated } = useAuthContext()!;
