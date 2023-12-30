@@ -27,7 +27,7 @@ const wrapperClient = (showError = false) => {
 
     client.interceptors.response.use(
         (response) => {
-            if (response && response.data) {
+            if (response && response.data && response.headers) {
                 return response.data;
             }
             return response;

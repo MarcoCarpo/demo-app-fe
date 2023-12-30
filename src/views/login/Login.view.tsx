@@ -10,7 +10,7 @@ import {
 import { useHandleLogin, useLoginForm } from "./customHooks";
 import { LoginDto, RegisterDto } from "./types";
 import { useEffect } from "react";
-import { useAuthContext } from "../../contexts/customHooks";
+import { useAuthContext } from "../../contexts/auth/customHooks";
 import { useNavigate } from "react-router-dom";
 
 const LoginView = ({ isRegister = false }) => {

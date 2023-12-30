@@ -1,7 +1,7 @@
 import { useMutation } from "@tanstack/react-query";
 import { logout } from "./api";
 import { useNavigate } from "react-router-dom";
-import { useAuthContext } from "../../contexts/customHooks";
+import { useAuthContext } from "../../contexts/auth/customHooks";
 
 export const useLogout = () => {
     const navigate = useNavigate();

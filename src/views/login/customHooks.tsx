@@ -5,7 +5,7 @@ import { z } from "zod";
 import { login, register } from "./api";
 import { LoginDto, RegisterDto } from "./types";
 import { useNavigate } from "react-router-dom";
-import { useAuthContext } from "../../contexts/customHooks";
+import { useAuthContext } from "../../contexts/auth/customHooks";
 import { onLoginSuccess, onRegisterSuccess } from "./functions";
 import { useEffect } from "react";
 
