@@ -5,7 +5,7 @@ import {
     createRoutesFromElements,
 } from "react-router-dom";
 import { Layout } from "../components";
-import { HomeView, LoginView } from "../views";
+import { CheckoutView, HomeView, LoginView, UserView } from "../views";
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -14,6 +14,8 @@ const router = createBrowserRouter(
             <Route path="/register" element={<LoginView isRegister />} />
             <Route element={<Layout />}>
                 <Route path="/" element={<HomeView />} />
+                <Route path="/checkout" element={<CheckoutView />} />
+                <Route path="/user" element={<UserView />} />
             </Route>
         </Route>,
     ),

@@ -12,6 +12,7 @@ export type User = {
         country: string;
         zipCode: string;
     };
+    image: Image;
 };
 
 export type Product = {
@@ -20,6 +21,14 @@ export type Product = {
     price: number;
     categoryName: string;
     description: string;
+    createdAt: string;
+    updatedAt: string;
+    image: Image;
+};
+
+export type Image = {
+    id: number;
+    url: string;
     createdAt: string;
     updatedAt: string;
 };

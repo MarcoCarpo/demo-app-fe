@@ -26,7 +26,7 @@ const Layout = () => {
                 <NavBar />
             </AppShell.Navbar>
 
-            <AppShell.Main className="flex">
+            <AppShell.Main>
                 <Outlet />
             </AppShell.Main>
 

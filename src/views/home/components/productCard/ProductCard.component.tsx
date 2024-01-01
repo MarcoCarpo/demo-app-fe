@@ -9,6 +9,8 @@ import {
     NumberFormatter,
     ActionIcon,
     Flex,
+    Box,
+    Center,
 } from "@mantine/core";
 import { CartItem, Product } from "../../types";
 import { IconMinus, IconPlus } from "@tabler/icons-react";
@@ -25,6 +27,7 @@ const ProductCard = ({
     price,
     categoryName,
     cart,
+    image,
     addToCart,
 }: Props) => {
     const isProductAlreadyInCart = (productId: number) => {
@@ -46,11 +49,13 @@ const ProductCard = ({
             h={400}
         >
             <Card.Section>
-                <Image
-                    src="https://www.misya.info/wp-content/uploads/2014/04/pane-di-segale1.jpg"
-                    height={160}
-                    alt="Norway"
-                />
+                {image?.url ? (
+                    <Image src={image?.url} height={160} alt="Norway" />
+                ) : (
+                    <Center h={160} w={"100%"} bg={"gray"}>
+                        No image
+                    </Center>
+                )}
             </Card.Section>
 
             <Group justify="space-between" mt="md" mb="xs">
